@@ -5,6 +5,7 @@
 
 const int HUGE_INT = 0x7fffffff;	// move to MachDependent.h
 const double MACH_EPS = 1.0e-14;	// move to MachDependent.h
+const double HUGE = 1.e300;
 
 enum OneD_status
 {

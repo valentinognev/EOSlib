@@ -2,7 +2,7 @@
 #include <LocalMath.h>
 
 using namespace std;
-
+const double HUGE = 1.e300;
 
 int main()
 {
