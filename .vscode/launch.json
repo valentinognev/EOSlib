@@ -6,6 +6,42 @@
     "configurations": 
     [
 
+        
+
+
+        {
+            "name": "Isotherm",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/Isotherm", 
+            "args": 
+            [
+               // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "P2", "10" 
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "DavisReactants::PBX9502", "P2", "10" 
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": 
+            [
+                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
+                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": 
+            [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },        
         {
             "name": "Detonation",
             "type": "cppdbg",

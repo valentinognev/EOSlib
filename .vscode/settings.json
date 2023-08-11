@@ -99,6 +99,14 @@
         "HEburn2func.C": "cpp",
         "PTequilibriumFunc.C": "cpp",
         "HEburn2.C": "cpp",
-        "HErate2.C": "cpp"
+        "HErate2.C": "cpp",
+        "PT.C": "cpp",
+        "HotSpotRateCCfunc.C": "cpp",
+        "ExtEOS_VT.C": "cpp",
+        "HEburn2wave.C": "cpp",
+        "Isotherm.C": "cpp",
+        "RiemannSolver.C": "cpp",
+        "ExtEOSwave.C": "cpp",
+        "List.C": "cpp"
     }
 }
