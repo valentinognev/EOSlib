@@ -3,6 +3,7 @@
         "/opt/ros/noetic/lib/python3/dist-packages"
     ],
     "files.associations": {
+        "*.json": "json",
         "Data.C": "cpp",
         "DavisProducts.C": "cpp",
         "DavisProductsFunc.C": "cpp",
@@ -107,6 +108,11 @@
         "Isotherm.C": "cpp",
         "RiemannSolver.C": "cpp",
         "ExtEOSwave.C": "cpp",
-        "List.C": "cpp"
+        "List.C": "cpp",
+        "VonMises1Dfunc.C": "cpp",
+        "PTequilibrium.C": "cpp",
+        "TestXisentrope.C": "cpp",
+        "Forward.C": "cpp",
+        "HarmonicF.C": "cpp"
     }
 }

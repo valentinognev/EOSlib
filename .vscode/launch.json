@@ -5,6 +5,10 @@
     "version": "0.2.0",
     "configurations": 
     [
+        
+
+
+
 
         
 
@@ -17,7 +21,8 @@
             "args": 
             [
                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "P2", "10" 
-                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "DavisReactants::PBX9502", "P2", "10" 
+               // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "DavisReactants::PBX9502", "P2", "10" 
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "DavisReactants::PBX9502", "V2", ".1" 
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -41,7 +46,8 @@
                     "ignoreFailures": true
                 }
             ]
-        },        
+        },     
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "Detonation",
             "type": "cppdbg",
@@ -74,6 +80,7 @@
                 }
             ]
         },        
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "ZND-SURFplus",
             "type": "cppdbg",
@@ -106,6 +113,7 @@
                 }
             ]
         },        
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "TestDavisOverdriven",
             "type": "cppdbg",
@@ -138,6 +146,7 @@
                 }
             ]
         },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "TestDavisHugoniot",
             "type": "cppdbg",
@@ -147,7 +156,7 @@
             [
                 "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502" 
             ],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "cwd": "${fileDirname}",
             "environment": 
             [
@@ -170,6 +179,7 @@
                 }
             ]
         },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "TestDavisProducts",
             "type": "cppdbg",
@@ -202,6 +212,7 @@
                 }
             ]
         },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "TestDavisReactants",
             "type": "cppdbg",
@@ -234,6 +245,7 @@
                 }
             ]
         },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "TestDavisCJ",
             "type": "cppdbg",
@@ -266,6 +278,7 @@
                 }
             ]
         },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "TestHEburnHEburn",
             "type": "cppdbg",
@@ -298,6 +311,7 @@
                 }
             ]
         },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "TestIntegrateHEburn",
             "type": "cppdbg",
@@ -330,6 +344,38 @@
                 }
             ]
         },
-
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "TestXisentrope",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/TestXisentrope", 
+            "args": 
+            [
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "mat", "DavisReactants::PBX9502" 
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": 
+            [
+                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
+                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": 
+            [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
     ]
 }
