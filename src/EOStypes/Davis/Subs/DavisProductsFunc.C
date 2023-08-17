@@ -7,7 +7,8 @@ double DavisProducts::Pref(double V)
     double vn = pow(v,n);
     double vk = pow(v,k+a);
     double va = pow(0.5*(vn+1./vn),a/n);
-    return pc*va/vk * (k-1.+fref(vn))/(k-1.+a);
+    double fref_=fref(vn);
+    return pc * va / vk * (k - 1. + fref_) / (k - 1. + a);
 }
 double DavisProducts::dPref(double V)
 {
@@ -52,8 +53,11 @@ double DavisProducts::P(double V, double e)
     if( V<=0. )
         return NaN;
     double vn = pow(V/Vc,n);
-    double G = k-1. +(1.-b)*fref(vn);
-    return Pref(V) + G/V *(e-eref(V));
+    double fref_=fref(vn);
+    double G = k-1. +(1.-b)*fref_;
+    double pref_ = Pref(V);
+    double eref_ = eref(V);
+    return pref_ + G / V * (e - eref_);
 }
 double DavisProducts::e_PV(double p, double V)
 {

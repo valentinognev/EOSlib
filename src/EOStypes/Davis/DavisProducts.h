@@ -66,7 +66,10 @@ public:
     double dPref(double V);     // (d/dV)Pref
     double eref(double V);
     double Tref(double V);
-    double fref(double vn) { return 2.*a/(1.+vn*vn);}
+    double fref(double vn)
+    { 
+        return 2.*a/(1.+vn*vn);
+    }
 // detonation allows non-equilibirum initial state for Hugoniot locus
     //Detonation *detonation(const HydroState &state, double P0);
     //Deflagration *deflagration(const HydroState &state, double P0);

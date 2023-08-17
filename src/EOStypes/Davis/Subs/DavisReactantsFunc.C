@@ -43,7 +43,9 @@ double DavisReactants::P(double V, double e)
     if( V<=0. )
         return NaN;
     double G = G0 + Z*(1.-V/V0);
-    return Pref(V) + G/V *(e-eref(V));
+    double pref_ = Pref(V);
+    double eref_ = eref(V);
+    return pref_ + G / V * (e - eref_);
 }
 double DavisReactants::e_PV(double p, double V)
 {
