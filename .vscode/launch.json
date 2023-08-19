@@ -5,6 +5,8 @@
     "version": "0.2.0",
     "configurations": 
     [
+        
+
 
         
 
@@ -358,6 +360,40 @@
                 "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "mat", "DavisProducts::PBX9502", "P", "10"  
             ],
             "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": 
+            [
+                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
+                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": 
+            [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "TestXRiemann",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/TestXRiemann", 
+            "args": 
+            [
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "mat", "DavisReactants::PBX9502", "P", "10"  
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "mat", "DavisProducts::PBX9502", "P", "10"  
+            ],
+            "stopAtEntry": true,
             "cwd": "${fileDirname}",
             "environment": 
             [

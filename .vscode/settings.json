@@ -113,6 +113,9 @@
         "PTequilibrium.C": "cpp",
         "TestXisentrope.C": "cpp",
         "Forward.C": "cpp",
-        "HarmonicF.C": "cpp"
+        "HarmonicF.C": "cpp",
+        "ViscousProfile.C": "cpp",
+        "TestXRiemann.C": "cpp",
+        "TestXmanager.C": "cpp"
     }
 }

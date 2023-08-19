@@ -1,6 +1,7 @@
 #include <Arg.h>
 
 #include <EOS.h>
+#include <DavisProducts.h>
 
 using namespace std;
 
@@ -42,6 +43,7 @@ int main(int, char **argv)
 	if( db.Read(file) )
 		cerr << Error("Read failed" ) << Exit;
 	EOS *products = FetchEOS(type,name,db);
+    DavisProducts* davis = dynamic_cast<DavisProducts*>(products);
 	if( products == NULL )
 		cerr << Error("Fetch failed") << Exit;
     if( units && products->ConvertUnits(units, db) )
@@ -51,7 +53,7 @@ int main(int, char **argv)
     double V0 = products->V_ref;
     double e0 = products->e_ref;
     HydroState state0(V0,e0);
-    //
+    
     Detonation *det = products->detonation(state0,P0);
     if( det == NULL )
         cerr << Error("products->detonation failed" ) << Exit;
