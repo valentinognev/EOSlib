@@ -5,6 +5,8 @@
     "version": "0.2.0",
     "configurations": 
     [
+
+
         
 
 
@@ -56,22 +58,30 @@
             "name": "Detonation",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/Detonation", 
-            "args": 
-            [
-                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "P2", "10" 
+            "program": "${workspaceFolder}/build/bin/Detonation",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "material",
+                "HEburn::PBX9502.davis",
+                "P2",
+                "10"
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
-            "environment": 
-            [
-                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
-                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
             ],
             "externalConsole": false,
             "MIMode": "gdb",
-            "setupCommands": 
-            [
+            "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
@@ -83,7 +93,51 @@
                     "ignoreFailures": true
                 }
             ]
-        },        
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "Deflagration",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/Deflagration",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "material",
+                "HEburn::PBX9502.davis",
+                "InitIsentrope",
+                "Ps",
+                "1",
+                "P2",
+                ".5"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
         ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "ZND-SURFplus",
@@ -117,6 +171,88 @@
                 }
             ]
         },        
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "ZNDprofile",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/ZNDprofile",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "material",
+                "HEburn::PBX9502.davis",
+                "upiston",
+                "1"
+            ],
+            "stopAtEntry": true,
+            "cwd": "${fileDirname}",
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        }, 
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "ZNDprofile-alt",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/ZNDprofile-alt",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "material",
+                "HEburn::PBX9502.davis",
+                "upiston",
+                "1"
+            ],
+            "stopAtEntry": true,
+            "cwd": "${fileDirname}",
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
         ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
             "name": "TestDavisOverdriven",

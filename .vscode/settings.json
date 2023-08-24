@@ -116,6 +116,10 @@
         "HarmonicF.C": "cpp",
         "ViscousProfile.C": "cpp",
         "TestXRiemann.C": "cpp",
-        "TestXmanager.C": "cpp"
+        "TestXmanager.C": "cpp",
+        "HEburnReactionTime.C": "cpp",
+        "IDOF.C": "cpp",
+        "PopPlotTrajectory.C": "cpp",
+        "CJprofile.C": "cpp"
     }
 }
