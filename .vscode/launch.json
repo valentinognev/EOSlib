@@ -5,19 +5,6 @@
     "version": "0.2.0",
     "configurations": 
     [
-
-
-        
-
-
-        
-
-
-
-
-        
-
-
         {
             "name": "Isotherm",
             "type": "cppdbg",
@@ -426,9 +413,9 @@
             "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestHEburnHEburn", 
             "args": 
             [
-                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data"
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis"
             ],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "cwd": "${fileDirname}",
             "environment": 
             [
@@ -459,7 +446,7 @@
             "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestIntegrateHEburn", 
             "args": 
             [
-                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9501.sam" 
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis" ,"lambda", "0.5"
             ],
             "stopAtEntry": true,
             "cwd": "${fileDirname}",
