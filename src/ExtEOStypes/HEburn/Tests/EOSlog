@@ -1,0 +1,83 @@
+Index 0 added to Units list
+Units:hydro::std
+{
+	Values = std
+	 Names = std
+}
+:UnitsValues=std
+{
+	L                    = 1
+	t                    = 1
+	m                    = 1
+	T                    = 1
+	u                    = L/t
+	rho                  = m/L^3
+	V                    = L^3/m
+	e                    = u^2
+	E                    = m*u^2
+	P                    = rho*e
+	S                    = e/T
+	Cv                   = e/T
+	beta                 = 1/T
+	length               = L
+	time                 = t
+	mass                 = m
+	temperature          = T
+	velocity             = u
+	density              = rho
+	specific_volume      = V
+	specific_energy      = e
+	energy               = E
+	pressure             = P
+	entropy              = S
+	specific_heat        = Cv
+	thermal_expansion    = beta
+}
+:UnitsNames=std
+{
+	length               = mm
+	time                 = micro`s
+	mass                 = mg
+	temperature          = K
+	force                = kN
+	energy               = J
+	velocity             = km/s
+	density              = g/cm^3
+	specific_volume      = cm^3/g
+	specific_energy      = MJ/kg
+	pressure             = GPa
+	specific_heat        = MJ/kg/K
+	thermal_expansion    = 1/K
+	u                    = km/s
+	rho                  = g/cm^3
+	V                    = cm^3/g
+	e                    = MJ/kg
+	E                    = J
+	P                    = GPa
+	Cv                   = MJ/kg/K
+	S                    = MJ/kg/K
+	beta                 = 1/K
+	L                    = mm
+	t                    = micro`s
+	m                    = mg
+	T                    = K
+}
+
+Index 0 added to EOS list
+EOS:DavisProducts::PBX9502; units=hydro::std
+{
+	V_ref = 0.527704; e_ref = 0
+#	P_ref = 12.7584; T_ref = 3097.27
+	   V0 = 0.527704
+	   e0 = 3.73204
+	   S0 = 0.00774996
+	    a = 0.8592
+	    n = 2.521
+	   Vc = 0.9884
+	   pc = 1.307
+	   Tc = 1340.31
+	    b = 0.58
+	    k = 1.3
+	   Cv = 0.000725
+}
+
