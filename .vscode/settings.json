@@ -120,6 +120,7 @@
         "HEburnReactionTime.C": "cpp",
         "IDOF.C": "cpp",
         "PopPlotTrajectory.C": "cpp",
-        "CJprofile.C": "cpp"
+        "CJprofile.C": "cpp",
+        "IgnitionGrowthFunc.C": "cpp"
     }
 }
