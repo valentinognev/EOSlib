@@ -476,38 +476,38 @@
             }
         ]
         },
-        ////////////////////////////////////////////////////////////////////////////////////////////////   
-        {
-            "name": "TestIntegrateHEburn",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestIntegrateHEburn", 
-            "args": 
-            [
-                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis" ,"lambda", "0.5"
-            ],
-            "stopAtEntry": true,
-            "cwd": "${fileDirname}",
-            "environment": 
-            [
-                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
-                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
-            ],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": 
-            [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
-                }
-            ]
+       ////////////////////////////////////////////////////////////////////////////////////////////////   
+       {
+        "name": "TestHErateHEburn",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestHErateHEburn", 
+        "args": 
+        [
+            "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "HMX.BM"
+        ],
+        "stopAtEntry": true,
+        "cwd": "${fileDirname}",
+        "environment": 
+        [
+            {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
+            {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+        ],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": 
+        [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            },
+            {
+                "description": "Set Disassembly Flavor to Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+            }
+        ]
         },
         ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
