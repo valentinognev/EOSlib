@@ -15,8 +15,14 @@
 extern const char *EOSlib_vers;
 extern const char *EOSlib_date;
 
-inline int EOSlib_mismatch() { return strcmp(EOS_vers, EOSlib_vers); }
-inline int EOSlib_mismatch(const char *vers) {return strcmp(vers, EOSlib_vers);}
+inline int EOSlib_mismatch() 
+{ 
+    return strcmp(EOS_vers, EOSlib_vers); 
+}
+inline int EOSlib_mismatch(const char *vers) 
+{
+    return strcmp(vers, EOSlib_vers);
+}
 //
 class EOS_tol;
 class EOS;
@@ -63,7 +69,10 @@ public:
  // misc
     EOS_VT *eosVT();
     virtual ~EOS();
-    EOS *Duplicate()    { return static_cast<EOS*>(EOSbase::Duplicate());} 
+    EOS *Duplicate()    
+    { 
+        return static_cast<EOS*>(EOSbase::Duplicate());
+    } 
     virtual void SetVerbose(int d);
 private:
     EOS();                                  // disallowed
@@ -129,17 +138,50 @@ public:
     int Evaluate(const HydroState &state1, WaveState    &state2);
     int Evaluate(const HydroState &state1, ThermalState &state2);
  //
-    double     P(const HydroState &state) {return     P(state.V,state.e);}
-    double    c2(const HydroState &state) {return    c2(state.V,state.e);}
-    double Gamma(const HydroState &state) {return Gamma(state.V,state.e);}
-    double     T(const HydroState &state) {return     T(state.V,state.e);}
-    double     S(const HydroState &state) {return     S(state.V,state.e);}
-    double     c(const HydroState &state) {return     c(state.V,state.e);}
-    double    CV(const HydroState &state) {return    CV(state.V,state.e);}
-    double    CP(const HydroState &state) {return    CP(state.V,state.e);}
-    double    KS(const HydroState &state) {return    KS(state.V,state.e);}
-    double    KT(const HydroState &state) {return    KT(state.V,state.e);}
-    double  beta(const HydroState &state) {return  beta(state.V,state.e);}
+    double     P(const HydroState &state) 
+    {
+        return     P(state.V,state.e);
+    }
+    double    c2(const HydroState &state) 
+    {
+        return    c2(state.V,state.e);
+    }
+    double Gamma(const HydroState &state) 
+    {
+        return Gamma(state.V,state.e);
+    }
+    double     T(const HydroState &state) 
+    {
+        return     T(state.V,state.e);
+    }
+    double     S(const HydroState &state) 
+    {
+        return     S(state.V,state.e);
+    }
+    double     c(const HydroState &state) 
+    {
+        return     c(state.V,state.e);
+    }
+    double    CV(const HydroState &state) 
+    {
+        return    CV(state.V,state.e);
+    }
+    double    CP(const HydroState &state) 
+    {
+        return    CP(state.V,state.e);
+    }
+    double    KS(const HydroState &state) 
+    {
+        return    KS(state.V,state.e);
+    }
+    double    KT(const HydroState &state) 
+    {
+        return    KT(state.V,state.e);
+    }
+    double  beta(const HydroState &state) 
+    {
+        return  beta(state.V,state.e);
+    }
 };
 //
 inline int deleteEOS(EOS *&eos)
@@ -152,16 +194,26 @@ inline int deleteEOS(EOS *&eos)
 // Database
 // 
 inline EOS *FetchEOS(const char *type, const char *name, DataBase &db)
-            { return (EOS *) db.FetchObj("EOS",type,name);}
+            { 
+                return (EOS *) db.FetchObj("EOS",type,name);
+            }
 inline EOS *FetchNewEOS(const char *type, const char *name, DataBase &db)
-            { return (EOS *) db.FetchNewObj("EOS",type,name);}
+            { 
+                return (EOS *) db.FetchNewObj("EOS",type,name);
+            }
 inline EOS *FetchEOS(const char *type_name, DataBase &db)
-            { return (EOS *) db.FetchObj("EOS",type_name);}
+            { 
+                return (EOS *) db.FetchObj("EOS",type_name);
+            }
 inline EOS *FetchNewEOS(const char *type_name, DataBase &db)
-            { return (EOS *) db.FetchNewObj("EOS",type_name);}
+            { 
+                return (EOS *) db.FetchNewObj("EOS",type_name);
+            }
 // print
 inline ostream & operator<<(ostream &out, EOS &eos)
-            { return eos.Print(out); }
+            { 
+                return eos.Print(out); 
+            }
 //
 // inline EOS functions
 //

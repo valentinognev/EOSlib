@@ -90,7 +90,9 @@ public:
     PTequilibrium(PTequilibrium_VT &eos);
     ~PTequilibrium();    
     PTequilibrium *Duplicate()
-        { return static_cast<PTequilibrium*>(EOSbase::Duplicate());  }
+        { 
+            return static_cast<PTequilibrium*>(EOSbase::Duplicate());  
+        }
     ostream &PrintComponents(ostream &out);
 // EOS functions
     double P(double V, double e);       // Pressure

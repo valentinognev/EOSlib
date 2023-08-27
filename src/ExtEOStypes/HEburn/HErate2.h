@@ -12,9 +12,13 @@ extern const char *HErate2_lib_vers;
 extern const char *HErate2_lib_date;
 
 inline int HErate2_lib_mismatch()
-    { return strcmp(HErate2_vers, HErate2_lib_vers); }
+    { 
+        return strcmp(HErate2_vers, HErate2_lib_vers); 
+    }
 inline int HErate2_lib_mismatch(const char *vers)
-    { return strcmp(vers, HErate2_lib_vers);       }
+    { 
+        return strcmp(vers, HErate2_lib_vers);       
+    }
 //
 //
 extern "C" {
@@ -105,11 +109,17 @@ public:
                                     double &dlambda, double &dlambda2)     = 0;
 };
 inline HErate2 *HErate2::Duplicate()
-    { return static_cast<HErate2*>(EOSbase::Duplicate());  }  
+    { 
+        return static_cast<HErate2*>(EOSbase::Duplicate());  
+    }  
 inline EOS *HErate2::Reactants()
-    { return (HE && HE->eos1) ? HE->eos1->Duplicate() : NULL;}
+    { 
+        return (HE && HE->eos1) ? HE->eos1->Duplicate() : NULL;
+    }
 inline EOS *HErate2::Products()
-    { return (HE && HE->eos2) ? HE->eos2->Duplicate() : NULL;}
+    { 
+        return (HE && HE->eos2) ? HE->eos2->Duplicate() : NULL;
+    }
 //
 inline int deleteHErate2(HErate2 *&rate2)
 {
@@ -118,17 +128,27 @@ inline int deleteHErate2(HErate2 *&rate2)
     return status;
 }
 inline ostream & operator<<(ostream &out, HErate2 &rate2)
-            { return rate2.Print(out); }
+            { 
+                return rate2.Print(out); 
+            }
 //
 // Database
 // 
 inline HErate2 *FetchHErate2(const char *type, const char *name, DataBase &db)
-            { return (HErate2 *) db.FetchObj("HErate2",type,name);}
+            { 
+                return (HErate2 *) db.FetchObj("HErate2",type,name);
+            }
 inline HErate2 *FetchNewHErate2(const char *type, const char *name, DataBase &db)
-            { return (HErate2 *) db.FetchNewObj("HErate2",type,name);}
+            { 
+                return (HErate2 *) db.FetchNewObj("HErate2",type,name);
+            }
 inline HErate2 *FetchHErate2(const char *type_name, DataBase &db)
-            { return (HErate2 *) db.FetchObj("HErate2",type_name);}
+            { 
+                return (HErate2 *) db.FetchObj("HErate2",type_name);
+            }
 inline HErate2 *FetchNewHErate2(const char *type_name, DataBase &db)
-            { return (HErate2 *) db.FetchNewObj("HErate2",type_name);}
+            { 
+                return (HErate2 *) db.FetchNewObj("HErate2",type_name);
+            }
 
 #endif // EOSLIB_HE_RATE2

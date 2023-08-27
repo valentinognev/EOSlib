@@ -143,16 +143,28 @@ inline int HEburn2::set_eos(const double *z)
         return 0;
     }
 inline int HEburn2::get_lambda(const double *z, double &lambda, double &lambda2)
-    { return rate ? rate->get_lambda(z,lambda,lambda2) : 1; }
+    { 
+        return rate ? rate->get_lambda(z,lambda,lambda2) : 1; 
+    }
 inline int HEburn2::set_lambda(double lambda, double lambda2, double *z)
-    { return rate ? rate->set_lambda(lambda,lambda2, z) : 1; }
+    { 
+        return rate ? rate->set_lambda(lambda,lambda2, z) : 1; 
+        }
 inline int HEburn2::lambda_ref(double &lambda, double &lambda2) const
-    { return rate ? rate->get_lambda(&(*z_ref),lambda,lambda2) : 1; }
+    { 
+        return rate ? rate->get_lambda(&(*z_ref),lambda,lambda2) : 1; 
+    }
 inline int HEburn2::set_lambda_ref(double lambda, double lambda2)
-    { return rate ? rate->set_lambda(lambda,lambda2, &(*z_ref)) : 1; }
+    { 
+        return rate ? rate->set_lambda(lambda,lambda2, &(*z_ref)) : 1; 
+    }
 inline EOS *HEburn2::Reactants()
-    { return (HE && HE->eos1) ? HE->eos1->Duplicate() : NULL;}
+    { 
+        return (HE && HE->eos1) ? HE->eos1->Duplicate() : NULL;
+    }
 inline EOS *HEburn2::Products()
-    { return (HE && HE->eos2) ? HE->eos2->Duplicate() : NULL;}
+    { 
+        return (HE && HE->eos2) ? HE->eos2->Duplicate() : NULL;
+    }
 
 #endif // EOSLIB_HE_BURN2

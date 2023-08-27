@@ -74,7 +74,8 @@ double DavisReactants::S(double V, double e)
 
 double DavisReactants::CV(double V, double e)
 {
-    return Cv+alpha*(S(V,e)-S0);
+    double s = S(V, e);
+    return Cv + alpha * (s - S0);
 }
 
 int DavisReactants::NotInDomain(double V, double e)

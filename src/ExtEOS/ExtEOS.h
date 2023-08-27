@@ -29,8 +29,14 @@ protected:
     virtual int  PreInit(Calc &);
     virtual int PostInit(Calc &, DataBase *);
 public:
-    int N() const       { return n;         }
-    IDOF *Zref()        { return z_ref;     }       // return IDOF & ?
+    int N() const       
+    { 
+        return n;         
+    }
+    IDOF *Zref()        
+    { 
+        return z_ref;     
+    }       // return IDOF & ?
     virtual int set_z(const char *var, double value, double *z);
     virtual int get_z(double *z, const char *var, double &value);
     // return value:
@@ -40,15 +46,34 @@ public:
     int set_zref(const char *var, double value);
     int get_zref(const char *var, double &value);
     //
-    double *Z()         { return ztmp;      }       // last z_f, return double const * ?
-    double &Z(int i)    { return ztmp[i];   }       // last z_f
-    void Equilibrium()                  { frozen = 0;}
-    int Frozen(const double *z=NULL)    { frozen = 1; return Replace(z);}
-    int IsFrozen() const { return frozen;}
+    double *Z()         
+    { 
+        return ztmp;      
+    }       // last z_f, return double const * ?
+    double &Z(int i)    
+    { 
+        return ztmp[i];   
+    }       // last z_f
+    void Equilibrium()                  
+    { 
+        frozen = 0;
+    }
+    int Frozen(const double *z=NULL)    
+    { 
+        frozen = 1; 
+        return Replace(z);
+    }
+    int IsFrozen() const 
+    { 
+        return frozen;
+    }
     virtual double *z_f(double V, double e);        // frozen or equilibrium z
     // returns ztmp, z_f or ztmp set by Equilibrate
     virtual ~ExtEOS();
-    ExtEOS *Duplicate() { return static_cast<ExtEOS*>(EOSbase::Duplicate());}
+    ExtEOS *Duplicate() 
+    { 
+        return static_cast<ExtEOS*>(EOSbase::Duplicate());
+    }
     virtual ExtEOS *Copy() = 0;             // derived class copy constructor
     virtual EOS *CopyEOS(const double *z);  // used by RiemannSolver_genX
     virtual ExtEOS *Copy(const double *z);

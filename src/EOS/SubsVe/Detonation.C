@@ -23,7 +23,8 @@ int Detonation::Initialize(const HydroState &state, double p0)
 {
     if( eos->InDomain(state.V,state.e) )
     {
-        if( eos->P(state) <= p0 )
+        double pp = eos->P(state);
+        if (pp <= p0)
         {
             P0 = EOS::NaN;
             eos->ErrorHandler()->Log("Detonation::Initialize",

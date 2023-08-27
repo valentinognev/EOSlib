@@ -19,10 +19,22 @@ protected:
 public:
     const char *name;                   // IDOF name
     const char **var_name;              // name of z[i]
-    int N() const                   { return n;     }
-    double  operator()(int i) const { return z[i];  }
-    double &operator[](int i)       { return z[i];  }
-    double *operator&()             { return z;     }
+    int N() const                   
+    { 
+      return n;     
+    }
+    double  operator()(int i) const 
+    { 
+      return z[i];  
+    }
+    double &operator[](int i)       
+    { 
+      return z[i];  
+    }
+    double *operator&()             
+    { 
+      return z;     
+    }
     int var_index(const char *vname) const;
  //
     virtual ~IDOF();

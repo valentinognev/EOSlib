@@ -122,6 +122,8 @@
         "PopPlotTrajectory.C": "cpp",
         "CJprofile.C": "cpp",
         "IgnitionGrowthFunc.C": "cpp",
-        "TestHErate.C": "cpp"
+        "TestHErate.C": "cpp",
+        "HotSpotRateCC.C": "cpp",
+        "CalcVars.C": "cpp"
     }
 }
