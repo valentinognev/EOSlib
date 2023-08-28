@@ -418,7 +418,7 @@ int main(int, char **argv)
     //
     // check CJ state
     //
-    if( checkCJ )
+    if( 1) //checkCJ )
     {
         double Vcj = CJ.V;
         double ecj = CJ.e;
@@ -434,7 +434,7 @@ int main(int, char **argv)
         cout << "Dcj ucj ccj = " << Dcj << " " << ucj << " " << ccj << "\n";
         cout << "sonic: 1 -(ucj+ccj)/Dcj = " << " " << du/Dcj << "\n";
 
-        return 1;
+        //return 1;
     }
     //
     upiston = max(upiston,CJ.u);
@@ -448,7 +448,7 @@ int main(int, char **argv)
     WaveState VN;
     if( hug->u_s(D,RIGHT,VN) )
         cerr << Error("hug->u_s failed") << Exit;
-    if( checkVN )
+    if( 1)//checkVN )
     {
         double Vvn = VN.V;
         double evn = VN.e;
@@ -463,7 +463,7 @@ int main(int, char **argv)
         cout << "uvn VN.u = " << uvn << " " << VN.u << "\n";
 
         deleteEOS(reactants);
-        return 1;
+        //return 1;
     }
 
     delete det;

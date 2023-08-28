@@ -321,7 +321,7 @@ int PTequilibrium::PT0iter(double V, double e)
         y[0] = V - (lambda1*V1+lambda2*V2);
         A[0][0] = lambdai[0];
         A[0][1] = lambdai[1];
-        //A[0][2] = A[0][3] = 0.0;
+        A[0][2] = A[0][3] = 0.0;
         // A[1]: P2 = P1
         y[1] = Pi[1]-Pi[0];
         A[1][0] =  dPdVi[0];
@@ -330,7 +330,7 @@ int PTequilibrium::PT0iter(double V, double e)
         A[1][3] = -dPdei[1];
         // A[2]:  e = lambda_1*e1 + lambda2*e2
         y[2] = e - (lambda1*e1+lambda2*e2);
-        //A[2][0] = A[2][1] = 0.0;
+        A[2][0] = A[2][1] = 0.0;
         A[2][2] = lambdai[0];
         A[2][3] = lambdai[1];
         // A[3]: T2 = T1

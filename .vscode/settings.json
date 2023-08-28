@@ -124,6 +124,10 @@
         "IgnitionGrowthFunc.C": "cpp",
         "TestHErate.C": "cpp",
         "HotSpotRateCC.C": "cpp",
-        "CalcVars.C": "cpp"
+        "CalcVars.C": "cpp",
+        "HEburn2rate.C": "cpp",
+        "PTiter.C": "cpp",
+        "variant": "cpp",
+        "VonMises.C": "cpp"
     }
 }
