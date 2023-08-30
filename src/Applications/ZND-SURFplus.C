@@ -175,7 +175,10 @@ class lambda1_ODE : public ODEfunc
 public:
     using ODEfunc::abs_tol;
     using ODEfunc::rel_tol;
-    lambda1_ODE(HotSpotRateCC *rate) { Rate=rate;}
+    lambda1_ODE(HotSpotRateCC *rate) 
+    { 
+        Rate=rate;
+    }
     double f(double V, const double *y, const double *yp);
 };
 double lambda1_ODE::f(double, const double *y, const double *yp)
