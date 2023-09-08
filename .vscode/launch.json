@@ -96,11 +96,14 @@
                 "/home/valento/EOS/EOSlib/DATA/EOS.data",
                 "material",
                 "HEburn::PBX9502.davis",
-                "InitIsentrope",
+                //"HEburn::PBX9501.davis",
+                "InitShock",
                 "Ps",
                 "1",
+                "lambda",
+                ".75",
                 "P2",
-                ".5"
+                "0.5"
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
