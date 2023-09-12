@@ -55,7 +55,7 @@
                 "40",
                 "InitIsentrope",
                 "lambda",
-                ".25",
+                ".75",
 
             ],
             "stopAtEntry": false,

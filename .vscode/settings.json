@@ -128,6 +128,8 @@
         "HEburn2rate.C": "cpp",
         "PTiter.C": "cpp",
         "variant": "cpp",
-        "VonMises.C": "cpp"
+        "VonMises.C": "cpp",
+        "*.tcc": "cpp",
+        "iomanip": "cpp"
     }
 }
