@@ -130,6 +130,16 @@
         "variant": "cpp",
         "VonMises.C": "cpp",
         "*.tcc": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "toVT.C": "cpp",
+        "TestHEfit.C": "cpp",
+        "TestBKW.C": "cpp",
+        "HEprods.C": "cpp",
+        "HEprodsfunc.C": "cpp",
+        "UsUp.C": "cpp",
+        "UsUpVT.C": "cpp",
+        "UsUpParams.C": "cpp",
+        "UsUpFunc.C": "cpp",
+        "TestMG1.C": "cpp"
     }
 }

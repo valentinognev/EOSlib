@@ -57,34 +57,34 @@ int JWLdetonation::InitCJ()
 
 
 double JWLdetonation::f(double var)
-{
-    V1 = var;
-    double dV = V0 - V1;
-    switch (fzero)
     {
-    case CJ:
-    {
-        P1 = eos->P(V1,e0);
-        double de = (P1+P0)*dV/(2 - dV*omega/V1);
-        e1 = e0 + de;
-        P1 += (omega/V1)*de;
-        D  = V0*sqrt((P1-P0)/dV);
-        return eos->c(V1,e1) - (V1/V0)*D;   // u+c - D
-    }
-    case pressure:
-        e1 = e0 + Pav*dV;
-        P1 = eos->P(V1,e1);
-        return P1;
-    case velocity:
-        e1 = e0 + 0.5*du2 + P0*dV;
-        P1 = eos->P(V1,e1);
-        return (P1-P0)*dV;                  // du2
-    case wave_speed:
-        e1 = e0 + 0.5*m2*dV*dV + P0*dV;
-        P1 = eos->P(V1,e1);
-        return (P1-P0)-m2*dV;
-    }
-}    
+        V1 = var;
+        double dV = V0 - V1;
+        switch (fzero)
+        {
+        case CJ:
+        {
+            P1 = eos->P(V1,e0);
+            double de = (P1+P0)*dV/(2 - dV*omega/V1);
+            e1 = e0 + de;
+            P1 += (omega/V1)*de;
+            D  = V0*sqrt((P1-P0)/dV);
+            return eos->c(V1,e1) - (V1/V0)*D;   // u+c - D
+        }
+        case pressure:
+            e1 = e0 + Pav*dV;
+            P1 = eos->P(V1,e1);
+            return P1;
+        case velocity:
+            e1 = e0 + 0.5*du2 + P0*dV;
+            P1 = eos->P(V1,e1);
+            return (P1-P0)*dV;                  // du2
+        case wave_speed:
+            e1 = e0 + 0.5*m2*dV*dV + P0*dV;
+            P1 = eos->P(V1,e1);
+            return (P1-P0)-m2*dV;
+        }
+    }    
 
 
 

@@ -721,6 +721,7 @@ int main(int, char **argv)
                << " " << setw(10) << setprecision(4) << T
                << " " << setw(10) << setprecision(4) << S
                << "\n";
+        M+=1.e-10;
       }
       delete I;
     }
