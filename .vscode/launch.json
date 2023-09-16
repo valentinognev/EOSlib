@@ -5,7 +5,49 @@
     "version": "0.2.0",
     "configurations": 
     [
+
         {
+            "name": "TestJWLDeflagration",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/src/EOStypes/JWL/Tests/TestJWLDeflagration",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "name",
+                "PBX9502.products",
+                "P0",
+                ".041"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+       {
             "name": "TestJWL",
             "type": "cppdbg",
             "request": "launch",

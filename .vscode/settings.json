@@ -140,6 +140,8 @@
         "UsUpVT.C": "cpp",
         "UsUpParams.C": "cpp",
         "UsUpFunc.C": "cpp",
-        "TestMG1.C": "cpp"
+        "TestMG1.C": "cpp",
+        "TestJWLPT.C": "cpp",
+        "BasePrint.C": "cpp"
     }
 }
