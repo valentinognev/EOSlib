@@ -7,6 +7,50 @@
     [
 
         {
+            "name": "HEburnReactionTime",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/HEburnReactionTime",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "name",
+                "PBX9502.IG",
+                "lambda1",
+                "0.5",
+                "T1",
+                "3000",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+
+        {
             "name": "TestJWLDeflagration",
             "type": "cppdbg",
             "request": "launch",
@@ -256,11 +300,12 @@
                 "file",
                 "/home/valento/EOS/EOSlib/DATA/EOS.data",
                 "material",
-                "HEburn::PBX9502.davis",
+                "HEburn::PBX9502.HotSpot.davis_SURF",
+                //"HEburn::PBX9502.davis",
                 "upiston",
-                "1"
+                "6"
             ],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [
                 {
@@ -501,8 +546,237 @@
             "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestHEburnHEburn", 
             "args": 
             [
-                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis",
+                //"file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis",
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.HotSpot.davis_SURF",
                 "lambda","0.25"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": 
+            [
+                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
+                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": 
+            [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "TestHEburnCCHEburn",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestHEburnCCHEburn",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "name",
+                "PBX9502.davis",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "TestTimeStepHEburn",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestTimeStepHEburn",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "name",
+                "PBX9502.davis",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "HE_GammaHEburn",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/HE_GammaHEburn",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "name",
+                "PBX9502.davis",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "HE_CvHEburn",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/HE_CvHEburn",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "name",
+                "PBX9502.davis",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "PopPlotTrajectoryHEburn",
+            "type": "cppdbg",
+            "request": "launch", 
+            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/PopPlotTrajectoryHEburn",
+            "args": [
+                "file",
+                "/home/valento/EOS/EOSlib/DATA/EOS.data",
+                "name",
+                "PBX9404.HOM",
+            ],
+            "stopAtEntry": true,
+            "cwd": "${fileDirname}",
+            "environment": [
+                {
+                    "name": "EOSLIB_DATA_PATH",
+                    "value": "${workspaceFolder}/DATA"
+                },
+                {
+                    "name": "EOSLIB_SHARED_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build/lib"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "TestHEeosHEburn",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestHEeosHEburn", 
+            "args": 
+            [
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.IG","lambda_min","0.1"
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

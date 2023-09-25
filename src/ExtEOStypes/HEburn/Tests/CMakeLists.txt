@@ -7,7 +7,7 @@ set(BLESSED_OUTPUT ${EOSLIB_BLESSED_OUTPUT}/ExtEOStypes/HEburn)
 
 
 list( APPEND tests TestHEburn2CC TestHEburn TestHEburnCC TestHEeos
-                   TestHErate TestIntegrate TestTimeStep )
+                   TestHErate TestIntegrate TestTimeStep HE_Cv HE_Gamma PopPlotTrajectory)
 
 foreach(test ${tests})
   add_executable(${test}HEburn ${test}.C)
