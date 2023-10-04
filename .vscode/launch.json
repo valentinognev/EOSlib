@@ -12,15 +12,8 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/HEburnReactionTime",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "name",
-                "PBX9502.IG",
-                "lambda1",
-                "0.5",
-                "T1",
-                "3000",
-            ],
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "LX14.Arrhenius", "lambda1", "0.5", "T1", "1000", "T2", "3000", "V0", "0.0"
+                        ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [
@@ -56,12 +49,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/src/EOStypes/JWL/Tests/TestJWLDeflagration",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "name",
-                "PBX9502.products",
-                "P0",
-                ".041"
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.products", "P0", ".041"
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -97,10 +85,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/src/EOStypes/JWL/Tests/TestJWL",
             "args": [ 
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "name",
-                "PBX9502.products"
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.products"
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -172,16 +157,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/Detonation",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "material",
-                "HEburn::PBX9502.davis",
-                "P2",
-                "40",
-                "InitIsentrope",
-                "lambda",
-                ".75",
-
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "P2", "40", "InitIsentrope", "lambda", ".75",
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -217,18 +193,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/Deflagration",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "material",
-                "HEburn::PBX9502.davis",
-                //"HEburn::PBX9501.davis",
-                "InitShock",
-                "Ps",
-                "1",
-                "lambda",
-                ".75",
-                "P2",
-                "0.5"
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "InitShock", "Ps", "1", "lambda", ".75", "P2", "0.5"
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -297,14 +262,11 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/ZNDprofile",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "material",
-                "HEburn::PBX9502.HotSpot.davis_SURF",
-                //"HEburn::PBX9502.davis",
-                "upiston",
-                "6"
-            ],
+     //           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.IG", "upiston", "2"
+     //           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.Arrhenius", "upiston", "2"
+     //           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9404.HOM", "upiston", "2"
+                   "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.HOM", "upiston", "2"
+    ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [
@@ -339,12 +301,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/ZNDprofile-alt",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "material",
-                "HEburn::PBX9502.davis",
-                "upiston",
-                "1"
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "upiston", "1"
             ],
             "stopAtEntry": true,
             "cwd": "${fileDirname}",
@@ -547,8 +504,7 @@
             "args": 
             [
                 //"file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis",
-                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.HotSpot.davis_SURF",
-                "lambda","0.25"
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.HotSpot.davis_SURF", "lambda","0.25"
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -580,10 +536,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestHEburnCCHEburn",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "name",
-                "PBX9502.davis",
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis",
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -619,10 +572,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestTimeStepHEburn",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "name",
-                "PBX9502.davis",
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis",
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -658,10 +608,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/HE_GammaHEburn",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "name",
-                "PBX9502.davis",
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis",
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -697,10 +644,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/HE_CvHEburn",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "name",
-                "PBX9502.davis",
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis",
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -736,10 +680,7 @@
             "request": "launch", 
             "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/PopPlotTrajectoryHEburn",
             "args": [
-                "file",
-                "/home/valento/EOS/EOSlib/DATA/EOS.data",
-                "name",
-                "PBX9404.HOM",
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9404.HOM",
             ],
             "stopAtEntry": true,
             "cwd": "${fileDirname}",
