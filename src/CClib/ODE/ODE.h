@@ -115,7 +115,7 @@ private:
                 // for y0, y0_prime etc. is used elsewhere.    
     // Local arrays used in Step:
     double *dy_full,  *y_full;
-    double *dy_half,  *y_half, *y_p_half;
+    double *dy_half,  *y_half, *yp_half;
     double *dy_2half, *y_2half;
     // Local arrays used in RungeKuttaStep:
     double *k1, *k2, *k3, *k4;

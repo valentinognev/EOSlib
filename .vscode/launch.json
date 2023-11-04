@@ -262,8 +262,9 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/ZNDprofile",
             "args": [
-               "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.IG", "upiston", "1"
-     //           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.Arrhenius", "upiston", "2"
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.IG", "upiston", "1"
+ //               "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.IG", "upiston", "2"
+                //           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.Arrhenius", "upiston", "2"
      //           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9404.HOM", "upiston", "2"
      //              "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.HOM", "upiston", "2"
     ],

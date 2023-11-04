@@ -41,7 +41,7 @@ ODE::ODE(int N_dim, int N_cache) : n_dim(N_dim)
 	
 	 dy_half = new double[n_dim];
 	  y_half = new double[n_dim];
-	y_p_half = new double[n_dim];
+	yp_half = new double[n_dim];
 	
 	dy_2half = new double[n_dim];
 	 y_2half = new double[n_dim];
@@ -63,7 +63,7 @@ ODE::~ODE()
 	
 	delete dy_half;
 	delete y_half;
-	delete y_p_half;
+	delete yp_half;
 	
 	delete dy_2half;
 	delete y_2half;

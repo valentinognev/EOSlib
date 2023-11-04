@@ -10,7 +10,7 @@ int ODE::Step(double t_request)
 	
 	CacheState& C1 = Cache[cach1];
 	double *y = C1.y0;
-	double *y_p = C1.y0_prime;
+	double *yp = C1.y0_prime;
 	double h = C1.h;
 	double t = C1.t0;
 	
@@ -20,7 +20,7 @@ int ODE::Step(double t_request)
 	int status = 1;
     for( ; max_itt>0; ) // fix rsm,12/8/03
     {
-    	while(--max_itt && RungeKuttaStep(y, y_p, dy_full, t, h))
+    	while(--max_itt && RungeKuttaStep(y, yp, dy_full, t, h))
     		h *= 0.5;		
     	if(!max_itt)
 		    return NON_CONVERGENCE;
@@ -28,14 +28,14 @@ int ODE::Step(double t_request)
     	do
     	{
     		h2 = h/2.0;
-    		if(RungeKuttaStep(y, y_p, dy_half, t, h2))
+    		if(RungeKuttaStep(y, yp, dy_half, t, h2))
             {
                 h = h2;
     			break; //return FAILED;
             }
     		AddVec(y_half, y, dy_half);
-    		F(y_p_half, y_half, t + h2);
-    		if(RungeKuttaStep(y_half, y_p_half, dy_2half, t+h2, h2))
+    		F(yp_half, y_half, t + h2);
+    		if(RungeKuttaStep(y_half, yp_half, dy_2half, t+h2, h2))
     			break; //return FAILED;
     			
     		AddVec(dy_2half, dy_half, dy_2half);
