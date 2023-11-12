@@ -355,30 +355,30 @@ int main(int, char **argv)
     int i;
 
 	cout.setf(ios::left, ios::adjustfield);
-    cout        << setw(15) << "# t"
-         << " " << setw(15) << "   xi"
-         << " " << setw(15) << "   M"
-         << " " << setw(15) << "   V"
-         << " " << setw(15) << "   e"
-         << " " << setw(15) << "   u"
-         << " " << setw(15) << "   c"
-         << " " << setw(15) << "   P"
-         << " " << setw(15) << "   T"
-         << " " << setw(15) << "   S"
-         << " " << setw(15) << "   lambda"
+    cout        << setw(10) << "# t"
+         << " " << setw(10) << "   xi"
+         << " " << setw(10) << "   M"
+         << " " << setw(10) << "   V"
+         << " " << setw(10) << "   e"
+         << " " << setw(10) << "   u"
+         << " " << setw(10) << "   c"
+         << " " << setw(10) << "   P"
+         << " " << setw(10) << "   T"
+         << " " << setw(10) << "   S"
+         << " " << setw(10) << "   lambda"
          << "\n";
     const Units *U = eos->UseUnits();
-    cout << "# " << setw(15) << U->Unit("t")
-         << "  " << setw(15) << U->Unit("L")
-         << " "  << setw(15) << "rho*len"
-         << " "  << setw(15) << U->Unit("V")
-         << " "  << setw(15) << U->Unit("e")
-         << " "  << setw(15) << U->Unit("u")
-         << " "  << setw(15) << U->Unit("u")
-         << " "  << setw(15) << U->Unit("P")
-         << " "  << setw(15) << U->Unit("T")
-         << " "  << setw(15) << U->Unit("S")
-         << " "  << setw(15) << " "
+    cout << "# " << setw(10) << U->Unit("t")
+         << "  " << setw(10) << U->Unit("L")
+         << " "  << setw(10) << "rho*len"
+         << " "  << setw(10) << U->Unit("V")
+         << " "  << setw(10) << U->Unit("e")
+         << " "  << setw(10) << U->Unit("u")
+         << " "  << setw(10) << U->Unit("u")
+         << " "  << setw(10) << U->Unit("P")
+         << " "  << setw(10) << U->Unit("T")
+         << " "  << setw(10) << U->Unit("S")
+         << " "  << setw(10) << " "
          << "\n";
 	cout.setf(ios::showpoint);
 	cout.setf(ios::right, ios::adjustfield);
@@ -399,17 +399,17 @@ int main(int, char **argv)
     lambda = 0.0;
     for( i=2; i; i-- )
     {
-        cout        << setw(15) << setprecision(8) << t
-             << " " << setw(15) << setprecision(8) << xi
-             << " " << setw(15) << setprecision(8) << M
-             << " " << setw(15) << setprecision(8) << V
-             << " " << setw(15) << setprecision(8) << e
-             << " " << setw(15) << setprecision(8) << u
-             << " " << setw(15) << setprecision(8) << c
-             << " " << setw(15) << setprecision(8) << P
-             << " " << setw(15) << setprecision(8) << T
-             << " " << setw(15) << setprecision(8) << S
-             << " " << setw(15) << setprecision(8) << lambda
+        cout        << setw(10) << setprecision(4) << t
+             << " " << setw(10) << setprecision(4) << xi
+             << " " << setw(10) << setprecision(4) << M
+             << " " << setw(10) << setprecision(4) << V
+             << " " << setw(10) << setprecision(4) << e
+             << " " << setw(10) << setprecision(4) << u
+             << " " << setw(10) << setprecision(4) << c
+             << " " << setw(10) << setprecision(4) << P
+             << " " << setw(10) << setprecision(4) << T
+             << " " << setw(10) << setprecision(4) << S
+             << " " << setw(10) << setprecision(4) << lambda
              << "\n";
         t  = 0.0;
         xi = 0.0;
@@ -423,7 +423,20 @@ int main(int, char **argv)
         lambda = double(i)/double(nsteps);
         lambda = min(lambda, 1.-1.e-12);
         // integrate to specified values of lambda
-        int status = profile.Lambda(lambda,xi, V,e,P,u);
+        int status = 0;
+        if (i==nsteps)
+        {
+            lambda = 0.97;
+            status = profile.Lambda(lambda, xi, V, e, P, u);
+            lambda = 0.98;
+            status = profile.Lambda(lambda, xi, V, e, P, u);
+            lambda = 0.99;
+            status = profile.Lambda(lambda, xi, V, e, P, u);
+            lambda = 0.999;
+            status = profile.Lambda(lambda, xi, V, e, P, u);
+        }
+        else
+            status = profile.Lambda(lambda, xi, V, e, P, u);
         if( status )
         {
             profile.Last(xi,V,e,P,u);
@@ -441,17 +454,17 @@ int main(int, char **argv)
         T = HE->T(V,e,z);
         c = HE->c(V,e,z);
         S = HE->S(V,e,z);
-        cout        << setw(15) << setprecision(8) << t
-             << " " << setw(15) << setprecision(8) << xi
-             << " " << setw(15) << setprecision(8) << M
-             << " " << setw(15) << setprecision(8) << V
-             << " " << setw(15) << setprecision(8) << e
-             << " " << setw(15) << setprecision(8) << u
-             << " " << setw(15) << setprecision(8) << c
-             << " " << setw(15) << setprecision(8) << P
-             << " " << setw(15) << setprecision(8) << T
-             << " " << setw(15) << setprecision(8) << S
-             << " " << setw(15) << setprecision(8) << lambda
+        cout        << setw(10) << setprecision(4) << t
+             << " " << setw(10) << setprecision(4) << xi
+             << " " << setw(10) << setprecision(4) << M
+             << " " << setw(10) << setprecision(4) << V
+             << " " << setw(10) << setprecision(4) << e
+             << " " << setw(10) << setprecision(4) << u
+             << " " << setw(10) << setprecision(4) << c
+             << " " << setw(10) << setprecision(4) << P
+             << " " << setw(10) << setprecision(4) << T
+             << " " << setw(10) << setprecision(4) << S
+             << " " << setw(10) << setprecision(4) << lambda
              << "\n";
         if( status )
             cerr << Error("profile.Lambda failed with status ")

@@ -5,6 +5,8 @@
     "version": "0.2.0",
     "configurations": 
     [
+    
+
 
         {
             "name": "HEburnReactionTime",
@@ -157,7 +159,8 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/Detonation",
             "args": [
-                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "P2", "40", "InitIsentrope", "lambda", ".75",
+ //               "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "P2", "40", "InitIsentrope", "lambda", ".75",
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.IG", "P2", "40", "InitIsentrope", "lambda", ".75",
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -257,14 +260,48 @@
         },        
         ////////////////////////////////////////////////////////////////////////////////////////////////   
         {
+            "name": "ZND-SURFplus-dx",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/ZND-SURFplus-dx", 
+            "args": 
+            [
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn2::PBX9502.HotSpotCC.davis_SURFplus", "dx","1"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": 
+            [
+                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
+                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": 
+            [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },        
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
             "name": "ZNDprofile",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/ZNDprofile",
             "args": [
-                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.IG", "upiston", "1"
+//                  "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "upiston", "1"
+//              "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.IG", "upiston", "1"
  //               "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.IG", "upiston", "2"
-                //           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.Arrhenius", "upiston", "2"
+                           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.Arrhenius", "upiston", "2"
      //           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9404.HOM", "upiston", "2"
      //              "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.HOM", "upiston", "2"
     ],
@@ -302,9 +339,11 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/ZNDprofile-alt",
             "args": [
-                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "upiston", "1"
+                 "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "upiston", "1"
+//                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.IG", "upiston", "1"
+//                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.IG", "upiston", "2"
             ],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [
                 {

@@ -166,6 +166,23 @@
         "TestRiemann.C": "cpp",
         "TestXmanagerEP.C": "cpp",
         "TestHydro.C": "cpp",
-        "ZNDprofileAlt.C": "cpp"
+        "ZNDprofileAlt.C": "cpp",
+        "*.ipp": "cpp",
+        "complex": "cpp",
+        "list": "cpp",
+        "functional": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "bit": "cpp",
+        "core": "cpp",
+        "condition_variable": "cpp",
+        "JWLdatabase.C": "cpp",
+        "FFrateFunc.C": "cpp",
+        "HotSpotRate2.C": "cpp",
+        "Arrhenius.C": "cpp",
+        "ParamIterator.C": "cpp",
+        "IgnitionGrowthRT.C": "cpp",
+        "TestHayes1.C": "cpp",
+        "TestHayes2VT.C": "cpp"
     }
 }
