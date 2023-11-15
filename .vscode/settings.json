@@ -183,6 +183,7 @@
         "ParamIterator.C": "cpp",
         "IgnitionGrowthRT.C": "cpp",
         "TestHayes1.C": "cpp",
-        "TestHayes2VT.C": "cpp"
+        "TestHayes2VT.C": "cpp",
+        "ArrheniusFunc.C": "cpp"
     }
 }

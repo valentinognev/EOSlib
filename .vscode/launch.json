@@ -301,10 +301,11 @@
 //                  "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "upiston", "1"
 //              "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.IG", "upiston", "1"
  //               "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.IG", "upiston", "2"
-                           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.Arrhenius", "upiston", "2"
-     //           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9404.HOM", "upiston", "2"
+//                         "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.Arrhenius", "upiston", "2"
+//           "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9404.HOM", "upiston", "2"
      //              "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.HOM", "upiston", "2"
-    ],
+                         "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9501.davis", "upiston", "2"
+],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [
@@ -339,7 +340,8 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/ZNDprofile-alt",
             "args": [
-                 "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "upiston", "1"
+//                 "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.davis", "upiston", "1"
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9501.davis", "upiston", "2"
 //                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::LX14.IG", "upiston", "1"
 //                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "material", "HEburn::PBX9502.IG", "upiston", "2"
             ],
@@ -894,6 +896,166 @@
                 "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "mat", "DavisProducts::PBX9502", "P", "10"  
             ],
             "stopAtEntry": true,
+            "cwd": "${fileDirname}",
+            "environment": 
+            [
+                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
+                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": 
+            [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "TestIntegrateHEburn",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestIntegrateHEburn", 
+            "args": 
+            [ 
+                //"file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "LX14.IG","lambda","0.01" 
+                //"file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis","lambda","0.01" 
+                // isotherm failed // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9501.davis","lambda","0.01" 
+                // isotherm failed // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9501.HOM","lambda","0.01" 
+                // isotherm failed // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.HOM","lambda","0.01" 
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9404.HOM","lambda","0.01" 
+                ///// cannot converge  // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.IG","lambda","0.1" 
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "LX14.Arrhenius","lambda","0.01" 
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": 
+            [
+                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
+                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": 
+            [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "TestHEeosHEburn",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestHEeosHEburn", 
+            "args": 
+            [ 
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "LX14.IG","lambda","0.01" 
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis"
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9501.davis",
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9501.HOM",
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.HOM" 
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9404.HOM"
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.IG"
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "LX14.Arrhenius"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": 
+            [
+                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
+                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": 
+            [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "TestTimeStepHEburn",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/TestTimeStepHEburn", 
+            "args": 
+            [ 
+                //"file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "LX14.IG","lambda","0.01" 
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis" 
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9501.davis"
+                // isotherm failed // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9501.HOM","lambda","0.01" 
+                // isotherm failed // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.HOM","lambda","0.01" 
+                //"file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9404.HOM","lambda","0.01" 
+                ///// cannot converge  // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.IG","lambda","0.1" 
+                //"file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "LX14.Arrhenius","lambda","0.01" 
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": 
+            [
+                {"name": "EOSLIB_DATA_PATH", "value": "${workspaceFolder}/DATA"},
+                {"name": "EOSLIB_SHARED_LIBRARY_PATH", "value": "${workspaceFolder}/build/lib"},
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": 
+            [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        ////////////////////////////////////////////////////////////////////////////////////////////////   
+        {
+            "name": "PopPlotTrajectoryHEburn",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/src/ExtEOStypes/HEburn/Tests/PopPlotTrajectoryHEburn", 
+            "args": 
+            [ 
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "LX14.IG","lambda","0.01" 
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.davis" 
+                // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9501.davis"
+                "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9501.HOM"
+                // isotherm failed // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.HOM","lambda","0.01" 
+                //"file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9404.HOM","lambda","0.01" 
+                ///// cannot converge  // "file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "PBX9502.IG","lambda","0.1" 
+                //"file", "/home/valento/EOS/EOSlib/DATA/EOS.data", "name", "LX14.Arrhenius","lambda","0.01" 
+            ],
+            "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": 
             [
