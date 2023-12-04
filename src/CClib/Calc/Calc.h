@@ -113,35 +113,87 @@ public:
     ~Calc() {}
     
     int parse(const char *line, double &value);
-    int Variable(const char *name, double *ptr)   {return var.AddVar(name,ptr);}
-    int Variable(const char *name, double val)    {return var.AddVar(name,val);}
-    int Variable(const char *name, int *ptr)      {return var.AddVar(name,ptr);}
-    int Variable(const char *name, int val)       {return var.AddVar(name,val);}
-    int Variable(const char *name, char **val)    {return var.AddVar(name,val);}
-    int Variable(const char *name,const char *val){return var.AddVar(name,val);}
-    int Variable(const char *name, CalcVar *&ptr) {return var.AddVar(name,ptr);}
+    int Variable(const char *name, double *ptr)   
+    {
+        return var.AddVar(name,ptr);
+    }
+    int Variable(const char *name, double val)    
+    {
+        return var.AddVar(name,val);
+    }
+    int Variable(const char *name, int *ptr)      
+    {
+        return var.AddVar(name,ptr);
+    }
+    int Variable(const char *name, int val)       
+    {
+        return var.AddVar(name,val);
+    }
+    int Variable(const char *name, char **val)    
+    {
+        return var.AddVar(name,val);
+    }
+    int Variable(const char *name,const char *val)
+    {
+        return var.AddVar(name,val);
+    }
+    int Variable(const char *name, CalcVar *&ptr) 
+    {
+        return var.AddVar(name,ptr);
+    }
     
     int Array(const char *name, double *ptr, int n)
-                    { return array.AddF(name,ptr,n); }
+    { 
+        return array.AddF(name,ptr,n); 
+    }
     int Array(const char *name, double **ptr, int row, int col)
-                    { return array.AddF(name,ptr,row,col); }
+    { 
+        return array.AddF(name,ptr,row,col); 
+    }
     int ArrayC(const char *name, double *ptr, int n)
-                    { return array.AddC(name,ptr,n); }
+    { 
+        return array.AddC(name,ptr,n); 
+    }
     int ArrayC(const char *name, double **ptr, int row, int col)
-                    { return array.AddC(name,ptr,row,col); }
-    int Array(const char *name, CalcArray *&ptr) {return array.Add(name,ptr);}
+    { 
+        return array.AddC(name,ptr,row,col); 
+    }
+    int Array(const char *name, CalcArray *&ptr) 
+    {
+        return array.Add(name,ptr);
+    }
     int DynamicArray(const char *name, int N=32,double *p=NULL, double udef=0.0)
-                    { return array.AddDynamic(name,N,p,udef);}
+    { 
+        return array.AddDynamic(name,N,p,udef);
+    }
        
-    int Fetch(const char *name, double &x)        { return var.get(name,x);}
-    int Fetch(const char *name, const char *&x)   { return var.get(name,x);}
-    CalcVar *Fetch(const char *name)              { return var.Fetch(name);}
-    CalcArray *FetchArray(const char *name)       { return array.Fetch(name);}
+    int Fetch(const char *name, double &x)        
+    { 
+        return var.get(name,x);
+    }
+    int Fetch(const char *name, const char *&x)   
+    { 
+        return var.get(name,x);
+    }
+    CalcVar *Fetch(const char *name)              
+    { 
+        return var.Fetch(name);
+    }
+    CalcArray *FetchArray(const char *name)       
+    { 
+        return array.Fetch(name);
+    }
     int FetchDynamicArray(const char *name, double *&ptr);
         // user responsible for deleting ptr
     
-    std::ostream &PrintMarker(std::ostream &out) { return input.PrintMarker(out); }
-    const char *NextChar() { return input.NextChar(); }
+    std::ostream &PrintMarker(std::ostream &out) 
+    { 
+        return input.PrintMarker(out); 
+    }
+    const char *NextChar() 
+    { 
+        return input.NextChar(); 
+    }
 };
 
 #endif // CCLIB_CALC_H

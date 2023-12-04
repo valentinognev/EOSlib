@@ -175,12 +175,9 @@ int HEburn::PostInit(Calc &calc, DataBase *db)
         HE = NULL;
         return 1;      
     }
-    HE->OneDFunc_abs_tol = HE->eos1->OneDFunc_abs_tol
-                         = HE->eos2->OneDFunc_abs_tol = OneDFunc_abs_tol;
-    HE->OneDFunc_rel_tol = HE->eos1->OneDFunc_rel_tol
-                         = HE->eos2->OneDFunc_rel_tol = OneDFunc_rel_tol;
-    HE->ODE_epsilon      = HE->eos1->ODE_epsilon
-                         = HE->eos2->ODE_epsilon = ODE_epsilon;
+    HE->OneDFunc_abs_tol = HE->eos1->OneDFunc_abs_tol = HE->eos2->OneDFunc_abs_tol = OneDFunc_abs_tol;
+    HE->OneDFunc_rel_tol = HE->eos1->OneDFunc_rel_tol = HE->eos2->OneDFunc_rel_tol = OneDFunc_rel_tol;
+    HE->ODE_epsilon      = HE->eos1->ODE_epsilon      = HE->eos2->ODE_epsilon = ODE_epsilon;
     double tol;
     if( calc.Fetch("PTtol",tol)==0 )
         HE->tol = tol;

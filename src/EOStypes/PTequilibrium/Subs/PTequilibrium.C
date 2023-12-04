@@ -216,7 +216,7 @@ int PTequilibrium::InitParams(Parameters &p, Calc &calc, DataBase *db)
 {
     deleteEOS(eos1);
     deleteEOS(eos2);
-    lambda1 = lambda2 = -1.;
+    lambda1 = lambda2 = -1.;  
     de = 0.0;
     P1_ref = T1_ref = 0.0;
     P2_ref = T2_ref = 0.0;
@@ -231,7 +231,7 @@ int PTequilibrium::InitParams(Parameters &p, Calc &calc, DataBase *db)
     e1  = e2  = 0.0;
     P1  = P2  = 0.0;
     T1  = T2  = 0.0;
-    Vav = eav = -1.23456;
+    Vav = eav = -1.23456; 
     Peq = Teq = 0.0;    
     char *eos1_name = NULL;
     calc.Variable( "eos1", &eos1_name );
@@ -276,8 +276,8 @@ int PTequilibrium::InitParams(Parameters &p, Calc &calc, DataBase *db)
         EOSerror->Log(FUNC, "eos1->ConvertUnits(%s::%s) failed\n",
                      units->Type(),units->Name() );
         return 1;
-    }   
-    eos2 = FetchEOS(eos2_name,*db);
+    }
+    eos2 = FetchEOS(eos2_name, *db); ///// tut
     if( eos2 == NULL )
     {
         EOSerror->Log(FUNC, "FetchEOS failed for %s\n", eos2_name );

@@ -104,14 +104,24 @@ public:
 };
 
 inline double BKW::lnPref(double lnV)
-    { return (((Pn[4]*lnV+Pn[3])*lnV+Pn[2])*lnV+Pn[1])*lnV+Pn[0]; }
+    { 
+        return (((Pn[4]*lnV+Pn[3])*lnV+Pn[2])*lnV+Pn[1])*lnV+Pn[0]; 
+    }
 inline double BKW::gref(double lnV)
-    { return -((4.*Pn[4]*lnV+3.*Pn[3])*lnV+2.*Pn[2])*lnV-Pn[1]; }
+    { 
+        return -((4.*Pn[4]*lnV+3.*Pn[3])*lnV+2.*Pn[2])*lnV-Pn[1]; 
+    }
 inline double BKW::lneref(double lnP)
-    { return (((en[4]*lnP+en[3])*lnP+en[2])*lnP+en[1])*lnP+en[0]; }
+    { 
+        return (((en[4]*lnP+en[3])*lnP+en[2])*lnP+en[1])*lnP+en[0]; 
+    }
 inline double BKW::lnTref(double lnV)
-    { return (((Tn[4]*lnV+Tn[3])*lnV+Tn[2])*lnV+Tn[1])*lnV+Tn[0]; }
+    { 
+        return (((Tn[4]*lnV+Tn[3])*lnV+Tn[2])*lnV+Tn[1])*lnV+Tn[0]; 
+    }
 inline double BKW::Gref(double lnV)
-    { return -((4.*Tn[4]*lnV+3.*Tn[3])*lnV+2.*Tn[2])*lnV-Tn[1]; }
+    { 
+        return -((4.*Tn[4]*lnV+3.*Tn[3])*lnV+2.*Tn[2])*lnV-Tn[1]; 
+    }
 
 #endif // EOSLIB_BKW_EOS_H

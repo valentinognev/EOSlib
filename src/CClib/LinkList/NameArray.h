@@ -45,8 +45,14 @@ private:
     _NameEntry(const char *s, Entry obj);
     ~_NameEntry();
     
-    Entry Object()     { return object; }
-    const char *Name() { return name; }
+    Entry Object()     
+    { 
+        return object; 
+    }
+    const char *Name() 
+    { 
+        return name; 
+    }
 };
 
 class _NameArray;
@@ -56,19 +62,44 @@ class _NameEntryList : private _List
     friend class _NameArray;
 public:
     _NameArray *parent;
-    ~_NameEntryList() { Empty(); }
+    ~_NameEntryList() 
+    { 
+        Empty(); 
+    }
 private:
-    _NameEntryList() { parent = 0; }
+    _NameEntryList() 
+    { 
+        parent = 0; 
+    }
     
     void DeAlloc(Entry obj);
     
-    void Append(_NameEntry *obj) { _List::Append((Entry)obj, 0); }
-    void Insert(_NameEntry *obj) { _List::Insert((Entry)obj, 0); }
-    void Remove()                { _List::Remove(); }
-    void Remove(int dir)         { _List::Remove(dir); }
+    void Append(_NameEntry *obj) 
+    { 
+        _List::Append((Entry)obj, 0); 
+    }
+    void Insert(_NameEntry *obj) 
+    { 
+        _List::Insert((Entry)obj, 0); 
+    }
+    void Remove()                
+    { 
+        _List::Remove(); 
+    }
+    void Remove(int dir)         
+    { 
+        _List::Remove(dir); 
+    }
     
-    _NameEntry* Start() { _List::Start(); return (_NameEntry *) _List::Get(); }
-    _NameEntry* Next()  { return (_NameEntry *) _List::Next();}
+    _NameEntry* Start() 
+    { 
+        _List::Start(); 
+        return (_NameEntry *) _List::Get(); 
+    }
+    _NameEntry* Next()  
+    { 
+        return (_NameEntry *) _List::Next();
+    }
 };
 
 int _DefaultNameArrayHash(const char *name);
@@ -98,10 +129,22 @@ protected:
     Entry Replace(const char *name, Entry val);
     void Delete(const char *name);
     int Defined(const char *name);
-    int Dimension()        const {return n_entries;}
-    int TableDimension()   const {return hash_table_size;}
-    const char *LastName() const { return last_name; }
-    Entry LastEntry()      const { return last_entry; }
+    int Dimension()        const 
+    {
+        return n_entries;
+    }
+    int TableDimension()   const 
+    {
+        return hash_table_size;
+    }
+    const char *LastName() const 
+    { 
+        return last_name; 
+    }
+    Entry LastEntry()      const 
+    { 
+        return last_entry; 
+    }
     const char **Names()   const;
 };
 
@@ -109,28 +152,71 @@ protected:
 template <class type, int size=101> class NAMEARRAY : private _NameArray
 {
 private:
-    Entry Allocate()           { return ((Entry) new type);}
-    void DeAllocate(Entry obj) { delete (type *)obj; }
+    Entry Allocate()           
+    { 
+        return ((Entry) new type);
+    }
+    void DeAllocate(Entry obj) 
+    { 
+        delete (type *)obj; 
+    }
     Entry Replace(const char *name, Entry val)
-          {return _NameArray::Replace(name,val);}
+    {
+        return _NameArray::Replace(name,val);
+    }
 public:
     NAMEARRAY ()      : _NameArray(size) { }
     NAMEARRAY(int sz) : _NameArray(sz)  { }
     NAMEARRAY(int sz, int (*func)(const char*)) : _NameArray(sz, func)  { }
-    ~NAMEARRAY() { if(SubList) delete [] SubList;}
+    ~NAMEARRAY() 
+    { 
+        if(SubList) 
+            delete [] SubList;
+    }
     type* Replace(const char *name, type *val)
-          { return (type*) _NameArray::Replace(name, (Entry) val); }
-    type& operator[](const char *name) { return *(type*) _NameArray::Get(name);}
-    void Delete(const char *name){ _NameArray::Delete(name); }
-    int Defined(const char *name){ return _NameArray::Defined(name);}
-    int Dimension()        const { return _NameArray::Dimension(); }
-    void SetHashTableDimension(int sz) { _NameArray::SetTable(sz);}
+    { 
+        return (type*) _NameArray::Replace(name, (Entry) val); 
+    }
+    type& operator[](const char *name) 
+    { 
+        return *(type*) _NameArray::Get(name);
+    }
+    void Delete(const char *name)
+    { 
+        _NameArray::Delete(name); 
+    }
+    int Defined(const char *name)
+    { 
+        return _NameArray::Defined(name);
+    }
+    int Dimension()        const 
+    { 
+        return _NameArray::Dimension(); 
+    }
+    void SetHashTableDimension(int sz) 
+    { 
+        _NameArray::SetTable(sz);
+    }
     void SetHashFunction(int (*func)(const char*))
-                                 { _NameArray::SetHashFunction(func); }
-    int TableDimension()   const { return _NameArray::TableDimension();}
-    const char* LastName() const { return _NameArray::LastName(); }
-    type& LastElement()    const { return *(type*)_NameArray::LastEntry();}
-    const char** Names()   const { return _NameArray::Names(); }
+    { 
+        _NameArray::SetHashFunction(func); 
+    }
+    int TableDimension()   const 
+    { 
+        return _NameArray::TableDimension();
+    }
+    const char* LastName() const 
+    { 
+        return _NameArray::LastName(); 
+    }
+    type& LastElement()    const 
+    { 
+        return *(type*)_NameArray::LastEntry();
+    }
+    const char** Names()   const 
+    { 
+        return _NameArray::Names(); 
+    }
 };
 
 #endif  /* _NAMEARRAY_ */
