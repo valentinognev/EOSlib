@@ -42,17 +42,29 @@ public:
     
     int AddValue(const char *name, const char *value);
     int AddName( const char *name, const char *value);
-    int Match(const Units &u) const { return Match(u.utype,u.uname); }
+    int Match(const Units &u) const 
+    { 
+        return Match(u.utype,u.uname); 
+    }
     int Match(const char *type, const char *name) const;
     int Match(const char *type_name) const;
 
-    const char *Type() const { return utype; }
-    const char *Name() const { return uname; }
+    const char *Type() const 
+    { 
+        return utype; 
+    }
+    const char *Name() const 
+    { 
+        return uname; 
+    }
     const char *Unit(const char *name) const;
     const char *Value(const char *name) const;
 
     ostream &Print(ostream &out, int rel_std=1) const;
-    ostream &PrintNames(ostream &out) const { return Print(out,0); }
+    ostream &PrintNames(ostream &out) const 
+    { 
+        return Print(out,0); 
+    }
     ostream &PrintVarNames(ostream &out) const;
 };
 
@@ -72,9 +84,13 @@ inline int operator!=(const Units &u1, const Units &u2)
 }
 
 inline int Units::AddValue(const char* name, const char* value)
-            { return values ? values->Add(name, value) : 1; }
+{ 
+    return values ? values->Add(name, value) : 1; 
+}
 inline int Units::AddName(const char* name, const char* value)
-            { return names ? names->Add(name, value) : 1; }
+{ 
+    return names ? names->Add(name, value) : 1; 
+}
 
 int deleteUnits(Units *&);
 extern "C" {
@@ -102,11 +118,20 @@ private:
 public:
     Convert(Units &from, Units &to);
     ~Convert();
-    operator int() {return status;}
+    operator int() 
+    {
+        return status;
+    }
         
     double factor(const char *quantity);
-    Units *From() { return from ? from->Duplicate() : NULL; }
-    Units *To()   { return   to ?   to->Duplicate() : NULL; }
+    Units *From() 
+    { 
+        return from ? from->Duplicate() : NULL; 
+    }
+    Units *To()   
+    { 
+        return   to ?   to->Duplicate() : NULL;
+    }
     int MatchTo(Units *u);
     int MatchFrom(Units *u);
 };

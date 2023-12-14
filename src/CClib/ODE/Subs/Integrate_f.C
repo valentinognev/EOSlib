@@ -57,7 +57,7 @@ int ODE::Integrate(ODEfunc &cl, double &val, double &t, double *y, double *yp)
 		}
 	}
 // Check Cache		
-	if( dir != 0 )
+	if ( dir != 0 )
 	{
         double F0 = Cache[cach0].EvalF(cl);
         double F1 = Cache[cach1].EvalF(cl);
@@ -225,7 +225,16 @@ int ODE::Integrate(ODEfunc &cl, double val)
             if( cl1 < cl0 )
                 return FAILED;  // cl not monotonic
             cl0 = cl1;
+			double tt = Cache[cach1].t0;
+			double y = *Cache[cach1].y0;
+			double h = Cache[cach1].h;
+			double yp = *Cache[cach1].y0_prime;
 		}
+		CacheState &C1 = Cache[cach1];
+		double y = *C1.y0;
+		double yp = *C1.y0_prime;
+		double h = C1.h;
+		double tt = C1.t0;
 	}
 	else
 	{

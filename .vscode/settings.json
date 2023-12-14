@@ -237,6 +237,9 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "HErateDataBase.C": "cpp",
-        "CalcVarTypes.C": "cpp"
+        "CalcVarTypes.C": "cpp",
+        "Calc.C": "cpp",
+        "Scanner.C": "cpp",
+        "Convert.C": "cpp"
     }
 }

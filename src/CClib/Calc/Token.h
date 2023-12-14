@@ -44,44 +44,137 @@ public:
     Token() : string(0), value(NaN), type(Empty) {}
     ~Token();
     
-    int IsError()    { return type == Error; }
-    int IsEof()      { return type == Eof; }
-    int IsEmpty()    { return type == Empty; }
-    int IsOperator() { return type == Operator; }
+    int IsError()    
+    { 
+        return type == Error; 
+    }
+    int IsEof()      
+    { 
+        return type == Eof; 
+    }
+    int IsEmpty()    
+    { 
+        return type == Empty; 
+    }
+    int IsOperator() 
+    { 
+        return type == Operator; 
+    }
     int IsOperator(const char *op)
-                     { return type == Operator && !strcmp(op,string); }
-    int IsEqual()    { return type == Operator &&
-                              (string[0] == '=' || string[1] == '='); }         
-    int IsLogical()  { return type == Logical; }
+    { 
+        return type == Operator && !strcmp(op,string); 
+    }
+    int IsEqual()    
+    { 
+        return type == Operator && (string[0] == '=' || string[1] == '='); 
+    }         
+    int IsLogical()  
+    { 
+        return type == Logical; 
+    }
     int IsLogical(const char *op)
-                     { return type == Logical && !strcmp(op,string);}
-    int IsBoolean()  { return type == Boolean; }
+    { 
+        return type == Logical && !strcmp(op,string);
+    }
+    int IsBoolean()  
+    { 
+        return type == Boolean; 
+    }
     int IsBoolean(const char *op)
-                     { return type == Boolean && !strcmp(op,string);}
-    int IsVariable() { return type == Variable; }
-    int IsNumber()   { return type == Number; }
-    int IsFunction() { return type == Function; }
-    int IsLiteral()  { return type == Literal; }
+    { 
+        return type == Boolean && !strcmp(op,string);
+    }
+    int IsVariable() 
+    {
+         return type == Variable;
+    }
+    int IsNumber()   
+    { 
+        return type == Number; 
+    }
+    int IsFunction() 
+    { 
+        return type == Function; 
+    }
+    int IsLiteral()  
+    { 
+        return type == Literal; 
+    }
     
-    void SetError()  { type=Error; Set(NULL,NaN); }
-    void SetEof()    { type=Eof;   Set(NULL,NaN); }
-    void SetEmpty()  { type=Empty; Set(NULL,NaN); }
+    void SetError()  
+    { 
+        type=Error; 
+        Set(NULL,NaN); 
+    }
+    void SetEof()    
+    { 
+        type=Eof;   
+        Set(NULL,NaN); 
+    }
+    void SetEmpty()  
+    { 
+        type=Empty; 
+        Set(NULL,NaN); 
+    }
     
-    void SetOperator(const char* word) { type=Operator; Set(word,NaN); }
-    void SetLogical(const char* word)  { type=Logical;  Set(word,NaN); }
-    void SetBoolean(const char* word)  { type=Boolean;  Set(word,NaN); }
-    void SetVariable(const char* word) { type=Variable; Set(word,NaN); }
-    void SetNumber(double v)           { type=Number;   Set(NULL,v);   }
-    void SetFunction(const char* word) { type=Function; Set(word,NaN); }
-    void SetLiteral(const char* word)  { type=Literal; Set(word,NaN);  }
+    void SetOperator(const char* word) 
+    { 
+        type=Operator; 
+        Set(word,NaN); 
+    }
+    void SetLogical(const char* word)  
+    { 
+        type=Logical;  
+        Set(word,NaN); 
+    }
+    void SetBoolean(const char* word)  
+    { 
+        type=Boolean;  
+        Set(word,NaN); 
+    }
+    void SetVariable(const char* word) 
+    { 
+        type=Variable; 
+        Set(word,NaN); 
+    }
+    void SetNumber(double v)           
+    { 
+        type=Number;   
+        Set(NULL,v);  
+    }
+    void SetFunction(const char* word) 
+    { 
+        type=Function; 
+        Set(word,NaN); 
+    }
+    void SetLiteral(const char* word)  
+    { 
+        type=Literal; 
+        Set(word,NaN);  
+    }
 
     void SetVariable(const char* ptr0, const char *ptr1)
-                { type=Variable; Set(ptr0, ptr1, NaN); }
+    {
+        type=Variable; 
+        Set(ptr0, ptr1, NaN); 
+    }
     void SetFunction(const char* ptr0, const char *ptr1)
-                { type=Function; Set(ptr0, ptr1, NaN); }
+    { 
+        type=Function; 
+        Set(ptr0, ptr1, NaN); 
+    }
     void SetLiteral(const char* ptr0, const char *ptr1)
-                { type=Literal;  Set(ptr0, ptr1, NaN); }
+    { 
+        type=Literal;  
+        Set(ptr0, ptr1, NaN); 
+    }
 
-    const char *String() const { return string; }
-    double       Value() const { return value;  }
+    const char *String() const 
+    { 
+        return string; 
+    }
+    double       Value() const 
+    { 
+        return value;  
+        }
 };
